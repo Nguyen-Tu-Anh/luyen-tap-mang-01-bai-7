@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number2 = +prompt('Nhập số nguyên V')
+    let numbers = +prompt('Nhập số phần tử trong mảng')
+    let arr = [];
+
+
+    for (let i = 0; i < numbers; i++) {
+        let number1 = +prompt('nhập phần tử')
+        arr[i] = number1;
+        document.write(arr[i] + ' ')
+    }
+    document.write('<br>')
+
+
+
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (number2 === arr[i]) {
+            count++;
+            for (let j = i; j < arr.length - count; j++) {
+                arr[j] = arr [j + 1];
+            }
+            i--
+            // arr[arr.length - 1] = 0;
+        }
+    }
+    for (let i = 0; i < arr.length - count; i++) {
+        document.write(arr[i] + ' ')
+    }
+    for (let i = arr.length - count; i < arr.length; i++) {
+        arr[i] = 0;
+        document.write(arr[i])
+    }
+    // for(let i = 0; i < arr.length; i++) {
+    //     document.write(arr[i] + ' ')
+    // }
+
+</script>
+</body>
+</html>
